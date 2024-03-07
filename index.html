@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<head>
+    <title>VIBRANT CONFERENCE '24</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            fontFamily: {
+                'display': ['FyneFish'],
+                'body': ['ProximaNova-Medium'],
+                'body-bold': ['ProximaNova-Bold']
+            },
+            extend: {
+                backgroundImage: {
+                    'hero-top': "url('bg-hero-top.png')",
+                    'about': "url('bg-about.png')",
+                    'sign-up': "url('bg-sign-up.jpeg')"
+                },
+                colors: {
+                    'mustard': "#E0DA3E",
+                    'indigo': "#38259D"
+                }
+            },
+          }
+        }
+    </script>
+
+    <script>
+        function scrollToAbout() {
+            const element = document.getElementById("about");
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
+        function scrollToSignUp() {
+            const element = document.getElementById("sign-up");
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
+        function scrollToTop() {
+            const element = document.getElementById("header");
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: FyneFish;
+            src: url(FyneFish.ttf);
+        }
+
+        @font-face {
+            font-family: ProximaNova-Medium;
+            src: url(ProximaNova-Medium.ttf);
+        }
+
+        @font-face {
+            font-family: ProximaNova-Bold;
+            src: url(ProximaNova-Bold.ttf);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="relative z-50">
+        <div class="fixed top-0 right-0 left-0 bg-gradient-to-b from-black p-8 flex justify-between">
+            <h1 class="font-display text-white text-4xl md:px-8 cursor-pointer" onclick="scrollToTop();">VIBRANT</h1>
+            <div class="flex space-x-12 justify-end md:px-12 invisible md:visible">
+                <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToAbout();">ABOUT</p>
+                <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToSignUp();">INSCRIE-TE</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="h-svh bg-hero-top bg-cover flex flex-col justify-center items-center space-y-8" id="header">
+        <h1 class="font-display text-mustard text-7xl md:text-9xl whitespace-pre-line">VIBRANT
+            CONF '24
+        </h1>
+        <button class="bg-mustard hover:bg-black text-black hover:text-mustard font-display text-2xl py-4 px-8 rounded-2xl" onclick="window.open('https://introhome.churchsuite.com/events/azm6mpmw','_blank');">
+            INSCRIE-TE
+        </button>
+    </div>
+
+    <div class="relative">
+        <video autoplay muted loop id="motion-for-the-love-of-gen-z" class="h-svh w-full object-cover z-0">
+            <source src="motion-for-the-love-of-gen-z.mp4" type="video/mp4">
+        </video>
+        <div class="absolute z-10 top-0 text-center w-full h-full px-8 flex justify-center items-center">
+            <h2 class="text-mustard text-6xl md:text-7xl font-display text-pretty">FOR THE LOVE OF GEN-Z</h2>
+        </div>
+    </div>
+    
+    <div class="bg-about bg-cover" id="about">
+        <div class="px-8 py-12 md:px-16 md:py-24 w-full md:w-4/5 lg:w-3/5 flex flex-col space-y-8">
+            <h2 class="text-mustard text-6xl md:text-7xl font-display">ABOUT</h2>
+            <p class="text-pretty text-white font-body">În inima unei lumi în continuă schimbare, unde tinerii sunt adesea prinși între tradiție și inovație, Conferința VIBRANT CONFERENCE își propune să fie un far de lumină și speranță. Organizată de o biserică nondenominațională, cu o pasiune arzătoare pentru Isus, această conferință este dedicată tinerilor care doresc să exploreze și să îmbrățișeze dragostea lui Dumnezeu într-un mod relevant și autentic pentru generația lor.</p>
+            <p class="text-pretty text-white font-body">Într-o epocă definită de rapiditatea schimbărilor tehnologice și de complexitatea provocărilor sociale, VIBRANT CONFERENCE oferă un spațiu sigur pentru dialog, învățare și creștere spirituală. Este un apel către toți tinerii care sunt gata să-și lase inimile aprinse de focul dragostei lui Isus și să devină lideri transformaționali în comunitățile lor.</p>
+            <p class="text-pretty text-white font-body">VIBRANT CONFERENCE este mai mult decât o conferință; este o invitație de a trăi o viață plină de sens, pasiune și dragoste pentru Isus. Este o ocazie de a descoperi cum fiecare dintre noi poate contribui la o lume mai bună, începând cu inimile noastre și comunitățile în care trăim.</p>
+            <p class="text-pretty text-white font-body">Alăturați-vă nouă în această călătorie extraordinară, să fim împreună "Pentru Dragostea Generației Z" și să vedem cum dragostea lui Isus poate transforma vieți, comunități și, în cele din urmă, întreaga lume.</p>
+        </div>
+    </div>
+
+    <div class="bg-sign-up bg-cover h-svh relative" id="sign-up">
+        <div class="absolute z-10 top-0 text-center w-full px-8 pt-24">
+            <h2 class="text-mustard text-6xl md:text-7xl font-display">BILETE</h2>
+        </div>
+        <div class="absolute z-20 top-0 text-center w-full h-full flex flex-col justify-center items-center space-y-8">
+            <h2 class="text-white text-6xl md:text-7xl font-display pt-16">PRET - 60 LEI</h2>
+            <button class="bg-mustard hover:bg-black text-black hover:text-mustard font-display text-2xl py-4 px-8 rounded-2xl" onclick="window.open('https://introhome.churchsuite.com/events/azm6mpmw','_blank');">
+                INSCRIE-TE
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-indigo flex flex-col py-12 px-8 space-y-12">
+        <div class="flex justify-around w-full flex-col md:flex-row space-y-12 md:space-y-0">
+            <p class="text-mustard text-4xl font-display whitespace-pre-line text-center">VIBRANT
+                CONF '24
+            </p>
+            <p class="text-mustard text-4xl font-display whitespace-pre-line text-center">FOR THE LOVE
+                OF GEN-Z
+            </p>
+        </div>
+        <div class="flex justify-center items-center">
+            <svg class="h-6 w-6 fill-mustard hover:fill-white cursor-pointer" onclick="window.open('https://instagram.com/vibrant.youth.cluj','_blank');" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+        </div>
+    </div>
+</body>
+
+</html>
