@@ -13,13 +13,16 @@
             fontFamily: {
                 'display': ['FyneFish'],
                 'body': ['ProximaNova-Medium'],
+                'body-regular': ['ProximaNova-Regular'],
                 'body-bold': ['ProximaNova-Bold']
             },
             extend: {
                 backgroundImage: {
                     'hero-top': "url('bg-hero-top.png')",
                     'about': "url('bg-about.png')",
-                    'sign-up': "url('bg-sign-up.jpeg')"
+                    'sign-up': "url('bg-sign-up.jpeg')",
+                    'lineup': "url('bg-lineup.png')",
+                    'sponsor-youth': "url('bg-sponsor-youth.png')"
                 },
                 colors: {
                     'mustard': "#E0DA3E",
@@ -41,6 +44,11 @@
             element.scrollIntoView({ behavior: "smooth" });
         }
 
+        function scrollToLineUp() {
+            const element = document.getElementById("lineup");
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
         function scrollToTop() {
             const element = document.getElementById("header");
             element.scrollIntoView({ behavior: "smooth" });
@@ -51,6 +59,11 @@
         @font-face {
             font-family: FyneFish;
             src: url(FyneFish.ttf);
+        }
+
+        @font-face {
+            font-family: ProximaNova-Regular;
+            src: url(ProximaNova-Regular.ttf);
         }
 
         @font-face {
@@ -73,6 +86,7 @@
             <h1 class="font-display text-white text-4xl md:px-8 cursor-pointer" onclick="scrollToTop();">VIBRANT</h1>
             <div class="flex space-x-12 justify-end md:px-12 invisible md:visible">
                 <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToAbout();">CINE SUNTEM</p>
+                <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToLineUp();">LINE UP</p>
                 <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToSignUp();">INSCRIE-TE</p>
             </div>
         </div>
@@ -82,9 +96,7 @@
         <h1 class="font-display text-mustard text-7xl md:text-9xl whitespace-pre-line">VIBRANT
             CONF '24
         </h1>
-        <button class="bg-mustard hover:bg-black text-black hover:text-mustard font-display text-2xl py-4 px-8 rounded-2xl" onclick="window.open('https://introhome.churchsuite.com/events/azm6mpmw','_blank');">
-            INSCRIE-TE
-        </button>
+        <p class="text-mustard font-body-regular text-3xl text-center text-balance">CLUJ-NAPOCA | 19-20 APRILIE</p>
     </div>
 
     <div class="relative">
@@ -106,6 +118,32 @@
         </div>
     </div>
 
+    <div class="bg-lineup bg-cover h-fit" id="lineup">
+        <div class="flex flex-col py-16 px-8 space-y-8">
+            <h2 class="w-full text-6xl md:text-7xl font-display text-center pb-8">LINE UP</h2>
+            <p class="font-body text-3xl text-center">SPEAKERS</p>
+            <div class="flex flex-col space-y-8 items-center pb-4 md:space-y-0 md:space-x-4 lg:space-x-8 xl:space-x-16 md:flex-row md:justify-center w-full md:h-64 lg:h-72 xl:h-80 2xl:h-96">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="mateo.jpeg">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="claudius.jpeg">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="sebi.jpeg">
+            </div>
+            <p class="font-body text-3xl text-center">BANDS</p>
+            <div class="flex flex-col space-y-8 md:space-y-0 md:space-x-4 lg:space-x-8 xl:space-x-16 md:flex-row md:justify-center w-full md:h-64 lg:h-72 xl:h-80 2xl:h-96">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="siloam.jpeg">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="intro-worship.jpeg">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-sponsor-youth bg-cover h-fit">
+        <div class="flex flex-col space-y-12 px-16 py-32 items-center">
+            <h2 class="text-mustard text-6xl md:text-7xl font-display text-balance text-center">SPONSOR A YOUTH</h2>
+            <button class="bg-mustard hover:bg-black text-black hover:text-mustard font-display text-2xl py-4 px-8 rounded-2xl w-fit" onclick="window.open('https://introhome.churchsuite.com/events/azm6mpmw','_blank');">
+                SPONSOR
+            </button>
+        </div>
+    </div>
+
     <div class="bg-sign-up bg-cover h-svh relative" id="sign-up">
         <div class="absolute z-10 top-0 text-center w-full px-8 pt-24">
             <h2 class="text-mustard text-6xl md:text-7xl font-display">BILETE</h2>
@@ -119,10 +157,11 @@
     </div>
 
     <div class="bg-indigo flex flex-col py-12 px-8 space-y-12">
-        <div class="flex justify-around w-full flex-col md:flex-row space-y-12 md:space-y-0">
+        <div class="flex justify-around items-center w-full flex-col md:flex-row space-y-12 md:space-y-0">
             <p class="text-mustard text-4xl font-display whitespace-pre-line text-center">VIBRANT
                 CONF '24
             </p>
+            <p class="text-mustard font-body-regular text-2xl text-center text-balance">CLUJ-NAPOCA | 19-20 APRILIE</p>
             <p class="text-mustard text-4xl font-display whitespace-pre-line text-center">FOR THE LOVE
                 OF GEN-Z
             </p>
