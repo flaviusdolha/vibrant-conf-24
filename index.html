@@ -13,6 +13,7 @@
             fontFamily: {
                 'display': ['FyneFish'],
                 'body': ['ProximaNova-Medium'],
+                'body-light': ['ProximaNova-Light'],
                 'body-regular': ['ProximaNova-Regular'],
                 'body-bold': ['ProximaNova-Bold']
             },
@@ -20,6 +21,7 @@
                 backgroundImage: {
                     'hero-top': "url('bg-hero-top.png')",
                     'about': "url('bg-about.png')",
+                    'schedule': "url('bg-schedule.png')",
                     'sign-up': "url('bg-sign-up.jpeg')",
                     'lineup': "url('bg-lineup.png')",
                     'sponsor-youth': "url('bg-sponsor-youth.png')"
@@ -49,6 +51,11 @@
             element.scrollIntoView({ behavior: "smooth" });
         }
 
+        function scrollToSchedule() {
+            const element = document.getElementById("schedule");
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
         function scrollToTop() {
             const element = document.getElementById("header");
             element.scrollIntoView({ behavior: "smooth" });
@@ -59,6 +66,11 @@
         @font-face {
             font-family: FyneFish;
             src: url(FyneFish.ttf);
+        }
+
+        @font-face {
+            font-family: ProximaNova-Light;
+            src: url(ProximaNova-Light.ttf);
         }
 
         @font-face {
@@ -87,6 +99,7 @@
             <div class="flex space-x-12 justify-end md:px-12 invisible md:visible">
                 <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToAbout();">CINE SUNTEM</p>
                 <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToLineUp();">LINE UP</p>
+                <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToSchedule();">PROGRAM</p>
                 <p class="text-white text-lg font-body-bold cursor-pointer" onclick="scrollToSignUp();">INSCRIE-TE</p>
             </div>
         </div>
@@ -108,13 +121,16 @@
         </div>
     </div>
     
-    <div class="bg-about bg-cover" id="about">
-        <div class="px-8 py-12 md:px-16 md:py-24 w-full md:w-4/5 lg:w-3/5 flex flex-col space-y-8">
-            <h2 class="text-mustard text-6xl md:text-7xl font-display">CINE SUNTEM</h2>
-            <p class="text-pretty text-white font-body">O mișcare de tineret care este pornită și condusă de Dumnezeu, astfel încât nimic nu poate să o doboare.</p>
-            <p class="text-pretty text-white font-body">Suntem tineri care răspund cu dedicare la viața nouă primită în Iisus. Suntem devotați să slujim Generația Z și să o influențăm. Suntem o mișcare care împuternicește fiecare adolescent în cercurile în care umblă să fie lumină în intuneric.</p>
-            <p class="text-pretty text-white font-body">O mișcare de tineri gata să ajungă la oamenii la care nimeni nu ajunge cu dragostea captivantă a lui Dumnezeu.</p>
-            <p class="text-pretty text-white font-body-bold text-xl uppercase">O mișcare de tineri care ard de pasiune pentru Iisus și pentru generația Z.</p>
+    <div class="bg-about bg-cover relative overflow-hidden" id="about">
+        <div class="px-8 py-24 md:py-12 md:px-16 md:py-24 w-full md:w-4/5 lg:w-3/5 flex flex-col space-y-8">
+            <h2 class="text-mustard text-6xl md:text-7xl font-display z-50">CINE SUNTEM</h2>
+            <p class="text-pretty text-white font-body z-50">O mișcare de tineret care este pornită și condusă de Dumnezeu, astfel încât nimic nu poate să o doboare.</p>
+            <p class="text-pretty text-white font-body z-50">Suntem tineri care răspund cu dedicare la viața nouă primită în Iisus. Suntem devotați să slujim Generația Z și să o influențăm. Suntem o mișcare care împuternicește fiecare adolescent în cercurile în care umblă să fie lumină în intuneric.</p>
+            <p class="text-pretty text-white font-body z-50">O mișcare de tineri gata să ajungă la oamenii la care nimeni nu ajunge cu dragostea captivantă a lui Dumnezeu.</p>
+            <p class="text-pretty text-white font-body-bold text-xl uppercase z-50">O mișcare de tineri care ard de pasiune pentru Iisus și pentru generația Z.</p>
+            <img class="absolute -rotate-12 h-24 -top-12 left-2 md:left-auto md:h-24 md:top-8 md:right-48 lg:h-32 lg:top-0 lg:right-64" src="praying-hands.png">
+            <img class="absolute h-1/5 top-8 -right-12 md:h-2/4 md:top-24 md:-right-8 lg:h-2/3 lg:top-32 lg:-right-16" src="together.png">
+            <img class="absolute h-24 -bottom-4 -right-4 md:bottom-auto md:h-1/6 md:top-12 md:-right-4 lg:h-1/5 lg:top-16 lg:right-6" src="you-matter.png">
         </div>
     </div>
 
@@ -130,8 +146,92 @@
             <p class="font-body text-3xl text-center">BANDS</p>
             <div class="flex flex-col space-y-8 md:space-y-0 md:space-x-4 lg:space-x-8 xl:space-x-16 md:flex-row md:justify-center w-full md:h-64 lg:h-72 xl:h-80 2xl:h-96">
                 <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="siloam.jpeg">
-                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="intro-worship.jpeg">
+                <img class="md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 2xl:h-96 2xl:w-96 object-cover" src="arca-worship.jpeg">
             </div>
+        </div>
+    </div>
+
+    <div class="bg-schedule bg-cover relative overflow-hidden" id="schedule">
+        <div class="px-8 py-24 md:py-12 md:px-16 md:py-24 w-full md:w-4/5 lg:w-3/5 flex flex-col space-y-8">
+            <h2 class="text-mustard mb-8 text-6xl md:text-7xl font-display z-50">PROGRAM</h2>
+            <div class="flex flex-col space-y-2">
+                <h3 class="text-mustard text-4xl md:text-5xl font-display z-50">VINERI</h2>
+                <p class="text-white font-body-light text-xl md:text-2xl z-50">OPENING NIGHT</p>
+                <div class="flex flex-row space-x-2 pt-4 z-50">
+                    <p class="text-white font-body-bold text-sm md:text-md w-24">17:30</p>
+                    <p class="text-white font-body-light text-sm md:text-md">Check-in + Coffee</p>
+                </div>
+                <div class="flex flex-row space-x-2 z-50">
+                    <p class="text-white font-body-bold text-sm md:text-md w-24">18:00 - 19:00</p>
+                    <p class="text-white font-body-light text-sm md:text-md">Pre-Party</p>
+                </div>
+                <div class="flex flex-row space-x-2 z-50">
+                    <p class="text-white font-body-bold text-sm md:text-md w-24">19:00 - 20:00</p>
+                    <p class="text-white font-body-light text-sm md:text-md">Sesiunea 1</p>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-mustard text-4xl md:text-5xl font-display z-50 pb-6">SAMBATA</h2>
+                <div class="flex flex-col space-x-0 md:flex-row md:space-x-8">
+                    <div class="flex flex-col space-y-2 z-50">
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">08:00 - 09:30</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Leaders Breakfast (invite only)</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">09:15 - 10:00</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Coffee & Chill</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">10:00 - 11:45</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Sesiunea 2</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">11:45 - 12:15</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Coffee Break</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">12:15 - 13:15</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Sesiunea 3</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col space-y-2 mt-2 md:mt-0 z-50">
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">13:15 - 16:00</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Lunch Break</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">16:00 - 17:30</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Ateliere</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">17:30 - 18:00</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Hangout + Coffee</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">18:00 - 20:00</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Sesiunea 4</p>
+                        </div>
+                        <div class="flex flex-row space-x-2">
+                            <p class="text-white font-body-bold text-sm md:text-md w-24">20:00 - ∞</p>
+                            <p class="text-white font-body-light text-sm md:text-md">Praise Party</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-2 z-50">
+                <h3 class="text-mustard text-4xl md:text-5xl font-display z-50 pb-4">DUMINICA</h2>
+                <div class="flex flex-row space-x-2">
+                    <p class="text-white font-body-bold text-sm md:text-md w-24">10:00 - 12:00</p>
+                    <p class="text-white font-body-light text-sm md:text-md">Sunday Service</p>
+                </div>
+                <div class="flex flex-row space-x-2">
+                    <p class="text-white font-body-bold text-sm md:text-md w-24">13:00</p>
+                    <p class="text-white font-body-light text-sm md:text-md">Baptism Party</p>
+                </div>
+            </div>
+            <img class="absolute h-32 top-48 -right-4 md:h-1/3 md:-top-4 md:right-8 lg:h-1/2 lg:-top-8 lg:right-32" src="clock.png">
+            <img class="absolute h-32 bottom-48 -right-4 md:h-2/5 md:bottom-8 md:right-2 lg:h-1/2 lg:bottom-16 lg:right-2" src="astronaut.png">
         </div>
     </div>
 
